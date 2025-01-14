@@ -23,7 +23,7 @@ function CourseDetail({ course }) {
             <h2 className="text-xm text-gray-500">Duration</h2>
         
             <h2 className="font-medium text-lg">
-              {course?.courseOutput?.course?.duration || "Almost there, updating the duration..."}
+              {course?.courseOutput?.course?.duration || ""}
             </h2>
           </div>
         </div>
@@ -31,7 +31,7 @@ function CourseDetail({ course }) {
           <IoBookOutline    className="text-4xl text-primary" />
           <div>
             <h2 className="text-xm text-gray-500">No Of Chapters</h2>
-            <h2 className="font-medium text-lg"> {course?.courseOutput?.course?.numberOfChapters || "Updating chapters, please wait..."}</h2>
+            <h2 className="font-medium text-lg"> {course?.courseOutput?.course?.numberOfChapters || ""}</h2>
           </div>
         </div>
         <div className="flex gap-2">
