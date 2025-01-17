@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react'
 import CourseBasicInfo from './_components/CourseBasicInfo';
 import CourseDetail from './_components/CourseDetail';
 import ChapterList from './_components/ChapterList';
+import { Button } from '@/components/ui/button';
 
 
 function CourseLayout({params}) {
@@ -24,6 +25,14 @@ function CourseLayout({params}) {
     setCourse(result[0]);
     console.log(result);
   }
+
+  const GenerateChapterContent=()=>{
+    const chapters=course?.courseOutput?.course?.chapters;
+    chapters.forEach((chapter,index)=>{
+      // const PROMPT=`Explain The concept in Detail on Topic: '${course?.name}', Chapter:${chapter?.name} in JSON Format with list of array with field as title, description in detail, Code Example(HTML Code Format) it applicable`
+      // console.log(PROMPT);
+    })
+  }
   return (
     <div className='mt-10 px-u md:px-20 lg:px-44'>
       <h2 className='font-bold text-center text-2xl'>Course Layout</h2>
@@ -38,6 +47,8 @@ function CourseLayout({params}) {
       {/* List of Lesson */}
 
       <ChapterList course={course} refreshData= {()=>GetCourse()} />
+
+        <Button onClick={GenerateChapterContent} className=' mt-5 my-20 font-bold text-xl'>Generate Course Content</Button>
 
     </div>
   )
