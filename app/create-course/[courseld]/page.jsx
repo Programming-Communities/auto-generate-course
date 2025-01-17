@@ -56,9 +56,9 @@ function CourseLayout({ params }) {
       for (let index = 0; index < chapters.length; index++) {
         const chapter = chapters[index];
         const PROMPT = `Explain The concept in Detail on Topic: '${course?.name}', Chapter:${chapter?.name} in JSON Format with list of array with field as title, description in detail, (Code field in <precode> Format) if applicable`;
-        console.log(PROMPT);
+        console.log(PROMPT);  
 
-        if (index === 0) {
+        if (index === 3) {
           const result = await GenerateChapterContent_AI.sendMessage(PROMPT);
           console.log(result.response.text());
 
